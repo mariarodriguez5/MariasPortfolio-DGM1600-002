@@ -8,6 +8,10 @@ html {
     scroll-behavior: smooth;
 }
 
+a {
+    text-decoration: none;
+}
+
 #navbar {
     width: 100%;
   position: fixed;
@@ -61,6 +65,24 @@ html {
     margin: 2rem;
 }
 #contact {
-    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 320px;
     background-color: #ffcc99;
+}
+
+#contact h1, h4 {
+    padding-bottom: 2rem;
+}
+
+#contact div {
+    display: flex;
+    justify-content: center;
+}
+
+#contact div a {
+    padding: 2rem;
+    font-size: 1.5rem;
 }
