@@ -1,4 +1,21 @@
-h1 {
+header {
     background-color: blue;
     color: #fff;
+}
+figure {
+    background-color: black;
+}
+
+img {
+    border: 8px solid gold;
+}
+figcaption {
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
