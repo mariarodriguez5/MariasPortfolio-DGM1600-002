@@ -271,3 +271,13 @@ const anotherObject = {
     return console.log(element) // explicit 'return' because of multiple lines
   }
   (num1, num2) => num1 + num2
+
+  // basic syntax is num => 'The Num'
+
+// a higher order function is a function that accepts another function as a parameter.
+// filter, map and reduce are the most popular, but forEach, every, find, and some are also HOFs
+
+const theFunction = () => {
+  //multiple lines use curly braces and 'return' keyword
+  return "I am awesome";
+};
