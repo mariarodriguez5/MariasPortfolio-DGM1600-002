@@ -1,18 +1,40 @@
 header {
-    background-color: blue;
+    background-color: orange;
     color: #fff;
+    font-size: 3em;
+    font-weight: 800;
+    padding: 10px;
+}
+body {
+    background-color: grey;
+    font-family: cursive;
 }
 figure {
     background-color: black;
+    border-radius: 10px;
+}
+figure:hover {
+    background-color:greenyellow;
+    cursor: pointer;
+}
+figure:hover figcaption {
+    color: black;
+    font-weight: 800;
+}
+figure:hover img {
+    border-color: greenyellow;
 }
 
 img {
-    border: 8px solid #FF69B4;
+    border: 8px solid orange;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 figcaption {
     color: white;
     text-align: center;
     font-size: xx-large;
+    padding: 5px;
 }
 main {
     display: flex;

@@ -2,6 +2,10 @@
     margin: 0;
     box-sizing: border-box
 }
+body {
+    background-color: orange;
+    font-family: sans-serif;
+}
 
 header {
     display: flex;
@@ -12,9 +16,12 @@ header {
 }
 
 button {
-    font-size: x-large;
-    background-color: aqua;
+    font-size: xx-large;
+    background-color: orange;
     border-radius: 10px;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
 }
 
 button:hover {
@@ -23,6 +30,8 @@ button:hover {
 main {
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
+    max-width: 95%;
 }
 
 figure {
@@ -31,4 +40,11 @@ margin: 8px;
 
 figure img {
     width: 200px;
+    border: 1px solid white;
+}
+
+figure figcaption {
+    font-size: 1.5em;
+    color:white;
+    font-weight: 500;
 }

@@ -91,6 +91,25 @@ a {
 }
 .project-tile {
   margin: 2rem;
+  border: 5px solid white;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+}
+.project-tile:hover {
+  border-color: greenyellow;
+  color: greenyellow
+}
+.project-tile:hover figcaption {
+  color: greenyellow;
+  font-size: 2.5em;
+}
+.project-tile img {
+  max-height: 320px;
+}
+figcaption {
+  color: white;
+  font-size: xx-large;
 }
 #contact {
   display: flex;
@@ -111,6 +130,7 @@ h4 {
 #contact div {
   display: flex;
   justify-content: center;
+  margin-right: auto;
 }
 
 #contact div a {
