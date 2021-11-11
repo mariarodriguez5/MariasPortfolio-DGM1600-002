@@ -33,4 +33,7 @@ function populateSenatorDiv(simpleSenators) {
         senatorDiv.appendChild(senFigure)
     })
 }
+const republicans = filterSenators('party', 'R')
+const fmaleSenators = filterSenators('gender', F)
 
+console.log(republicans, femaleSenators)
