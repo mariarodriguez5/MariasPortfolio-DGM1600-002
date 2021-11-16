@@ -11,7 +11,7 @@ return senators.map(senator => {
         party: senator.party,
         imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`,
         gender: senator.gender,
-        senority: +senority.senority,
+        senority: +senator.seniority,
         missedVotesPct: senator.missed_votes_pct,
         loyaltyPct: senator.votes_with_party_pct,
     }
@@ -43,8 +43,7 @@ const femaleSenators = filterSenators('gender', 'F')
 //console.log(republicans, femaleSenators)
 
 const mostSeniorSenator = simplifiedSenators().reduce((acc, senator) => {
-return acc.senority > senator.senority ? acc : senator
-
+return acc.senority > senator.seniority ? acc : senator
 })
 
 console.log(mostSeniorSenator)
