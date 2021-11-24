@@ -18,5 +18,20 @@ figure {
   border-radius: 0.8rem;
 }
 figcaption {
-  text-align: center;
+    text-align: center;
 }
+.modalbutton {
+  background: linear-gradient(to left, red, white, blue);
+  padding: 10px;
+  border-radius: 0.8rem;
+  margin: 10rem;
+  display:flexbox;
+  align-items: center;
+ 
+}
+.title {
+    text-align: center;
+    font-family: cursive;
+}
+
+  
