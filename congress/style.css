@@ -1,20 +1,22 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.senators{
-    display: flex;
-    flex-wrap: wrap;
+.senators {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-figure{
-    width: 160px;
-    display: flex;
-    flex-direction: column;
-    margin: 1em;
-    border: 4px solid aqua
+figure {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  background: linear-gradient(to left, red, white, blue);
+  padding: 10px;
+  border-radius: 0.8rem;
 }
 figcaption {
-    text-align: center;
+  text-align: center;
 }

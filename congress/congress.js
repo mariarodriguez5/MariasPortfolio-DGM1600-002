@@ -6,6 +6,8 @@ const members = [...senators, ...representatives]; //modern combining arrays lik
 const senatorDiv = document.querySelector('.senators');
 const seniorityHeading = document.querySelector('.seniority')
 const weaselOrderedList = document.querySelector('.weaselList')
+const modal = document.querySelector(".modal");
+const modalCloseBtn = document.querySelector(".modal-close");
 
 function simplifiedMembers(chamberFilter) {
     
@@ -48,6 +50,7 @@ const filterSenators = (prop, value) =>
   simplifiedMembers().filter((senator) => senator[prop] === value);
 
 const republicans = filterSenators("party", "R");
+const democrats = filterSenators("party", "D");
 const femaleSenators = filterSenators("gender", "F");
 
 //console.log(republicans, femaleSenators)
@@ -56,8 +59,8 @@ const mostSeniorMember = simplifiedMembers().reduce((acc, senator) => {
   return acc.senority > senator.seniority ? acc : senator;
 });
 
-seniorityHeading.textContent = `The most senior member of Congress is ${mostSeniorMember.name} who has
-taken our tax dollars as salary for more than ${mostSeniorMember.seniority} years!`;
+seniorityHeading.textContent = `The most senior member of Congress is ${mostSeniorMember.name}.`;
+weaselOrderedList.textContent = "Most known people of Congress:";
 
 const mostLoyal = simplifiedMembers().reduce((acc, senator) => {
   if (senator.loyaltyPct === 100) {
@@ -82,4 +85,46 @@ biggestWeasels.forEach(weasel => {
     listItem.textContent = weasel.name
     weaselOrderedList.appendChild(listItem)
 })
+
+function clearDiv() {
+  senatorDiv.innerHTML = "";
+}
+
+function showRepublicans() {
+  modal.classList.add("is-active");
+  clearDiv();
+  populateSenatorDiv(republicans);
+}
+
+document.getElementById("republicansBtn").addEventListener("click", showRepublicans);
+
+function showDemocrats() {
+  modal.classList.add("is-active");
+  clearDiv();
+  populateSenatorDiv(democrats);
+}
+
+document.getElementById("democratsBtn").addEventListener("click", showDemocrats);
+
+function showSenators() {
+  modal.classList.add("is-active");
+  clearDiv();
+  populateSenatorDiv(simplifiedMembers("Sen."));
+}
+
+document.getElementById("senatorsBtn").addEventListener("click", showSenators);
+
+function showRepresentatives() {
+  modal.classList.add("is-active");
+  clearDiv();
+  populateSenatorDiv(simplifiedMembers("Rep."));
+}
+
+document.getElementById("representativesBtn").addEventListener("click", showRepresentatives);
+
+function closeModal() {
+  modal.classList.remove("is-active");
+}
+
+modalCloseBtn.addEventListener("click", closeModal);
 
