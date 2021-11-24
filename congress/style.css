@@ -22,12 +22,17 @@ figcaption {
 }
 .modalbutton {
   background: linear-gradient(to left, red, white, blue);
-  padding: 10px;
+  padding: 20px;
+  font-size: medium;
+  font-weight: 600;
   border-radius: 0.8rem;
-  margin: 10rem;
-  display:flexbox;
+  margin: 8rem;
   align-items: center;
- 
+  margin-block-start: 8em;
+  margin-block-end: 30rem;
+  display:flexbox;
+  align-items: center; 
+  
 }
 .title {
     text-align: center;
