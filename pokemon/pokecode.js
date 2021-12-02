@@ -3,6 +3,7 @@ async function getAPIData(url) {
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
+    return data;
   } catch (error) {
     console.error(error);
   }
@@ -11,7 +12,7 @@ async function getAPIData(url) {
 getAPIData(`https://pokeapi.co/api/v2/pokemon/snorlax`)
 .then((data) => {
     console.log(data)
-    populatePokeCards(data)
+    populatePokeCards(data);
 })
 
 const pokeGrid = document.querySelector('.pokeGrid')
@@ -26,7 +27,7 @@ function populatePokeCards(singlePokemon) {
     pokeFront.textContent = 'Front'
     const pokeBack = document.createElement('div')
     pokeBack.className = 'cardFace back'
-    pokeBack.textContent = singlePokemon.name
+    pokeBack.textContent = singlePokemon?.name
 
     pokeCard.appendChild(pokeFront)
     pokeCard.appendChild(pokeBack)
