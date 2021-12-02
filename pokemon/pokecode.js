@@ -22,17 +22,37 @@ function populatePokeCards(singlePokemon) {
     pokeScene.className = 'scene'
     const pokeCard = document.createElement('div')
     pokeCard.className = 'card'
-    const pokeFront = document.createElement('div')
-    pokeFront.className = 'cardFace front'
-    pokeFront.textContent = 'Front'
-    const pokeBack = document.createElement('div')
-    pokeBack.className = 'cardFace back'
-    pokeBack.textContent = singlePokemon?.name
+    pokeCard.addEventListener('click', () => pokeCard.classList.toggle('is-flipped'))
 
-    pokeCard.appendChild(pokeFront)
-    pokeCard.appendChild(pokeBack)
+const front = populateCardFront(singlePokemon)
+const back = populateCardBack(singlePokemon)
+    
+
+    pokeCard.appendChild(front)
+    pokeCard.appendChild(back)
     pokeScene.appendChild(pokeCard)
     pokeGrid.appendChild(pokeScene)
 }
+
+function populateCardFront(pokemon) {
+    const pokeFront = document.createElement('div')
+    pokeFront.className = 'cardFace front'
+    pokeFront.textContent = 'Front'
+    const pokeImg = document.createElement('img')
+    pokeImg.src = '../images/pokeball.png'
+
+    const pokeCaption = document.createElement('figCaption')
+    pokeCaption.textContent = pokemon.name
+    pokeFront.appendChild(pokeImg)
+    pokeFront.appendChild(pokeCaption)
+    return pokeFront
+}
+function populateCardBack(pokemon) {
+    const pokeBack = document.createElement('div')
+    pokeBack.className = 'cardFace back'
+    pokeBack.textContent = 'Back'
+    return pokeBack
+}
+
 
 
