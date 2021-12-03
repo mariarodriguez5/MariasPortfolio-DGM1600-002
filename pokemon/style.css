@@ -3,10 +3,15 @@
   box-sizing: border-box;
 }
 
+.pokeGrid{
+    display: flex;
+    flex-wrap: wrap;
+}
 .scene {
   width: 200px;
   height: 260px;
-  margin: 1em;
+  margin: .5em;
+  perspective: 600px;
 }
 
 .card {
@@ -36,4 +41,8 @@
 .back {
   background: mediumseagreen;
   transform: rotateY(180deg);
+}
+
+figure img{
+    width: 200px;
 }
