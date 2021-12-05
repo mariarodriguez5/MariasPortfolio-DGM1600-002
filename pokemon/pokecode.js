@@ -11,7 +11,8 @@ getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
   console.log(data);
   for (const pokemon of data.results) {
       console.log(pokemon)
-       getAPIData(pokemon.url).then((pokeData) => populatePokeCards(pokeData), 
+       getAPIData(pokemon.url).then((pokeData) => 
+       populatePokeCard(pokeData), 
        )
 };
 }
@@ -20,8 +21,13 @@ getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
 
 const pokeGrid = document.querySelector(".pokeGrid");
 const loadButton = document.querySelector('.loadPokemon')
-loadButton.addEventListener('click', () => loadPokemon(100,5))
+loadButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  loadPokemon(100,5)
+})
 
+const moreButton = document.querySelector('.morePokemon')
+moreButton.addEventListener('click')
 const newButton = document.querySelector('.newPokemon')
 newButton.addEventListener('click', () => {
     let pokeName = prompt('What is the name of your new Pokemon?')
@@ -43,7 +49,7 @@ class Pokemon {
 
 
 
-function populatePokeCards(singlePokemon) {
+function populatePokeCard(singlePokemon) {
   const pokeScene = document.createElement("div");
   pokeScene.className = "scene";
   const pokeCard = document.createElement("div");
