@@ -97,7 +97,7 @@ function populateCardFront(pokemon) {
   pokeFront.appendChild(pokeImg);
   pokeFront.appendChild(pokeCaption);
 
-  typesBackground(pokemon, pokeFront);
+  //typesBackground(pokemon, pokeFront);
   return pokeFront;
 }
 
@@ -106,12 +106,11 @@ function typesBackground(pokemon, card) {
   let pokeType2 = pokemon.types[1]?.type.name;
   console.log(pokeType1, pokeType2)
   card.style.setProperty(
-    "background",
-    `linear-gradient(${getPokeTypeColor(pokeType1)}, ${getPokeTypeColor(
-      pokeType2
-    )})`
-  );
-}
+    'background',
+    `linear-gradient(${getPokeTypeColor(pokeType1)}, #FFF})`
+  )
+  }
+
 
 function getPokeTypeColor(pokeType) {
   let color;
@@ -135,7 +134,7 @@ function getPokeTypeColor(pokeType) {
       color = "#00FFFF";
       break;
     case "poison":
-      color = "#00FF00";
+      color = "#C300FF";
       break;
     case "electric":
       color = "#C8FF00";
