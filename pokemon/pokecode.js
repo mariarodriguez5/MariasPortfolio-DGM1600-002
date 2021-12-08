@@ -111,7 +111,6 @@ function typesBackground(pokemon, card) {
   )
   }
 
-
 function getPokeTypeColor(pokeType) {
   let color;
   switch (pokeType) {
@@ -145,6 +144,7 @@ function getPokeTypeColor(pokeType) {
     default:
       color = "#888888";
   }
+  return color
 }
 
 function populateCardBack(pokemon) {
