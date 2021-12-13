@@ -2179,7 +2179,7 @@ export const senators = [
     suffix: null,
     date_of_birth: "1954-05-04",
     gender: "M",
-    party: "D",
+    party: "D", 
     leadership_role: null,
     twitter_account: "sendougjones",
     facebook_account: "senatordougjones",

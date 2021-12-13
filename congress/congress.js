@@ -5,7 +5,8 @@ const members = [...senators, ...representatives]; //modern combining arrays lik
 
 const senatorDiv = document.querySelector('.senators');
 const seniorityHeading = document.querySelector('.seniority')
-const weaselOrderedList = document.querySelector('.weaselList')
+const weaselOrderedList = document.querySelector('.weaselList');
+const noSocialMedia = document.querySelector('.noSocialMedia');
 const modal = document.querySelector(".modal");
 const modalCloseBtn = document.querySelector(".modal-close");
 
@@ -26,6 +27,9 @@ function simplifiedMembers(chamberFilter) {
       senority: +senator.seniority,
       missedVotesPct: senator.missed_votes_pct,
       loyaltyPct: senator.votes_with_party_pct,
+      twitter_account: senator.twitter_account,
+      facebook_account: senator.facebook_account,
+      youtube_account: senator.youtube_account,
     };
   });
 }
@@ -85,6 +89,16 @@ biggestWeasels.forEach(weasel => {
     listItem.textContent = weasel.name
     weaselOrderedList.appendChild(listItem)
 })
+
+const noSocialMediaMember = simplifiedMembers().some(member => {
+   let result = (!member.twitter_account && !member.facebook_account && !member.youtube_account)
+   if (result) {
+     debugger
+   }
+   return result;
+})
+
+noSocialMedia.textContent = "Are there any members with not social media accounts?, " + noSocialMediaMember;
 
 function clearDiv() {
   senatorDiv.innerHTML = "";
