@@ -56,7 +56,7 @@ h1 {
 .back {
   background: navy;
   transform: rotateY(180deg);
-  color: gold;
+  color: white;
   font-size: 25px;
   font-weight: 900;
 }
