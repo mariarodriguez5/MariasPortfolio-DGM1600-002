@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Pokemon Hollow Normal';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Pokemon Hollow Normal'), url('fonts/Pokemon Hollow.woff') format('woff');
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -5,7 +12,7 @@
 
 body {
   background-color: coral;
-  font-family: 'Pokemon Hollow', sans-serif;
+  font-family: 'Pokemon Hollow Normal', sans-serif;
   color: navy;
   word-spacing: 20px;
   font-weight: 900;
@@ -54,10 +61,10 @@ h1 {
 }
 
 .back {
-  background: navy;
+  background: wheat;
   transform: rotateY(180deg);
-  color: white;
-  font-size: 20px;
+  color: black;
+  font-size: 16px;
   font-weight: 900;
 }
 

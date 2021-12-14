@@ -40,7 +40,8 @@ async function getAllSimplePokemon() {
           id: pokeData.id,
           name: pokeData.name,
           types: pokeData.types,
-          weight: pokeData.weight
+          weight: pokeData.weight,
+          sprites: pokeData.sprites
         }
         allPokemon.push(mappedPokemon)
       })
@@ -247,10 +248,14 @@ function populateCardBack(pokemon) {
 
   const pokeWeight = document.createElement('h5')
   pokeWeight.textContent = `Weight: ${pokemon.weight}`
-  
+
+  const pokeSprites = document.createElement('img')
+  pokeSprites.src = pokemon.sprites.front_default;
+  debugger;
   pokeBack.appendChild(abilityList);
   pokeBack.appendChild(typeslist);
   pokeBack.appendChild(pokeHeight);
   pokeBack.appendChild(pokeWeight);
+  pokeBack.appendChild(pokeSprites);
   return pokeBack;
 }
