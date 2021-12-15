@@ -91,14 +91,14 @@ biggestWeasels.forEach(weasel => {
 })
 
 const noSocialMediaMember = simplifiedMembers().some(member => {
-   let result = (!member.twitter_account && !member.facebook_account && !member.youtube_account)
-   if (result) {
-     debugger
-   }
-   return result;
+   return (!member.twitter_account && !member.facebook_account && !member.youtube_account)
 })
 
-noSocialMedia.textContent = "Are there any members with not social media accounts?, " + noSocialMediaMember;
+const whichNoSocialMediaMember = simplifiedMembers().find(member => {
+  return (!member.twitter_account && !member.facebook_account && !member.youtube_account)
+})
+
+noSocialMedia.textContent = "Are there any members with not social media accounts? " + noSocialMediaMember + ", what is the name of any of those? " + whichNoSocialMediaMember.name;
 
 function clearDiv() {
   senatorDiv.innerHTML = "";
