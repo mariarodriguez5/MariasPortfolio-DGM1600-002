@@ -3,15 +3,16 @@
   box-sizing: border-box;
 }
 body {
-    background-color: black;
-    color: yellow
-}
+        background: url("http://wallpapercave.com/wp/pEeUsp1.jpg");
+        font-size: 16px;
+      }
 
 header, footer {
 font-family: 'Rock Salt', cursive;
 font-size: 4em;
 text-align: center;
 padding: 20px;
+color: yellow;
 }
 
 footer {
