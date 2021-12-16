@@ -60,7 +60,7 @@ sortButton.addEventListener('click', () => {
   allByType.forEach(item => populatePokeCard(item))
 })
 
-const typeSelector = document.getElementById('typeSelector')
+const typeSelector = document.getElementById('typeSelector');
 typeSelector.addEventListener('change', (event) => {
   const usersTypeChoise = event.target.value.toLowerCase();
   const allByType = getAllPokemonByType(usersTypeChoise)
@@ -74,6 +74,7 @@ moreButton.addEventListener("click", () => {
   loadPokemon(offset, limit);
 });
 const newButton = document.querySelector(".newPokemon");
+
 newButton.addEventListener("click", () => {
   let pokeName = prompt("What is the name of your new Pokemon?");
   let pokeHeight = prompt("What is the Pokemon's height?");
@@ -121,7 +122,8 @@ class Pokemon {
     this.height = height,
     this.weight = weight,
     this.abilities = abilities,
-    this.types = types
+    this.types = types,
+    this.sprites = { front_default: '/images/pokeball.png' }
   }
 }
 
@@ -168,7 +170,7 @@ function populateCardFront(pokemon) {
 function typesBackground(pokemon, card) {
   let pokeType1 = pokemon.types[0].type.name;
   let pokeType2 = pokemon.types[1]?.type.name;
-  console.log(pokeType1, pokeType2)
+
   if(!pokeType2) {
     card.style.setProperty('background', getPokeTypeColor(pokeType1))
   } else {
@@ -251,7 +253,8 @@ function populateCardBack(pokemon) {
 
   const pokeSprites = document.createElement('img')
   pokeSprites.src = pokemon.sprites.front_default;
-  debugger;
+  pokeSprites.width = 80;
+
   pokeBack.appendChild(abilityList);
   pokeBack.appendChild(typeslist);
   pokeBack.appendChild(pokeHeight);
